@@ -1,0 +1,23 @@
+const fun1=()=>{
+       setTimeout(()=>{
+           console.log("getting rollno.")
+           let arr = [1,2,3,4,5]
+           console.log(arr)
+           
+           setTimeout((...roll)=>{
+               const biodata = {
+                   name:"harsh",
+                   age:22,
+                   rollNo: roll[2]
+               }
+               setTimeout((biodata)=>{
+                   console.log(`my name is ${biodata.name} , my age is ${biodata.age} and my roll no. is ${biodata.rollNo}`)
+               },2000, biodata)
+           },2000,...arr)
+       },2000)
+    }
+    
+    fun1()
+
+nested multiple call backs is called call back hell 
+as it is really difficult to maintain it
