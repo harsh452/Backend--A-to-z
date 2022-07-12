@@ -1,0 +1,9 @@
+sync == untill 1 operation is completed the other operations cannot b executed
+async == user can perform multipe operations without blocking the javascript engine
+
+Jvascript is default synchronus but it becomes async in two cases
+1 ->  Browser API/Web API events or functions. These include methods like setTimeout,or eventhandlers
+2- promises
+
+****////******
+https://www.freecodecamp.org/news/synchronous-vs-asynchronous-in-javascript/
