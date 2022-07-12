@@ -1,0 +1,2 @@
+ASYNC and AWAIT are used to work with promises in javascript
+If there is a ASYNC attached to the function then that means it will return some promise
