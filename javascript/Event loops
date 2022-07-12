@@ -1,0 +1,11 @@
+Event loops consist of
+
+1 CALL STACK -> BROWSER APIS -> CALLBACK QUEUE
+
+first fun comes in call stack and gets executed if it any moment it encounters and browser api event it sends that to browser 
+api where it waits until the exucution time is over mean while the call stack perform other synchronus tasks which are in line . then after 
+the event is execurted in browser api it is send into call back queue and from there its send again to call stack
+
+*******//////*********
+https://www.freecodecamp.org/news/synchronous-vs-asynchronous-in-javascript/
+article on event loops
