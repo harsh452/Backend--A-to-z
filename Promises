@@ -1,0 +1,14 @@
+Promises are used to work with asynchronus operation in javascript
+it manages multipke asynchronus operations
+
+Promise is an objec which keeps track wheather the following event has already occured or not
+
+It also determines what happens after the event is executed
+
+**************** /////// ***************
+Promises have 3 stages 
+1->< pending = = this is the stage before execution of event
+
+2->< Resolve == if the promise is fullfield  then this stage occures
+
+3->< reject == if promise is not fullfilled 
