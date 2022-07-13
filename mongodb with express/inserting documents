@@ -1,0 +1,60 @@
+ now after creating collection we need to insert documents
+ name of the collection is biodatas
+ 
+ 
+ const insertDoc  = async() =>{
+    try{
+        const stu1 = new Biodata({
+            name:"Harsh",
+            age: 21,
+            Address: "E-75 3rd c khetri Nagar rajasthan",
+            active: true
+        })
+         const result = await stu1.save();
+         console.log(result);
+    }catch(err){
+        console.log(err);
+    }
+    
+}
+
+insertDoc();
+
+now we can insert multiple documents at same time
+
+
+const insertDoc  = async() =>{
+    try{
+        const stu1 = new Biodata({
+            name:"Zaid",
+            age: 22,
+            Address: "Bihar",
+            active: true
+        })
+        const stu2 = new Biodata({
+            name:"harsh",
+            age: 21,
+            Address: "Rajasthan",
+            active: true
+        }) 
+         const stu3 = new Biodata({
+            name:"sayak",
+            age: 22,
+            Address: "Bengal",
+            active: true
+        })
+          const stu4 = new Biodata({
+            name:"Vishal",
+            age: 23,
+            Address: "Orrisa",
+            active: true
+        })
+         const result = await  Biodata.insertMany([stu1,stu2,stu3,stu4]);
+         console.log(result);
+    }catch(err){
+        console.log(err);
+    }
+    
+}
+
+insertDoc();
