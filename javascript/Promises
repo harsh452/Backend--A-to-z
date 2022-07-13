@@ -14,3 +14,42 @@ Promises have 3 stages
 3->< reject == if promise is not fullfilled 
 
 Whenever we define a new promise object we need to define a function in it called Executer . IN this function we can write our logic.
+
+
+const pobj1 = new Promise((resolve , reject)=>{
+    setTimeout(()=>{
+        let arr=[1,2,3,4,5];
+        resolve(arr[2]); ///  this signifies that we got the output and we 
+                         /// inserted it in resolve func.
+        //reject("error while communicating") 
+    },2000)
+})
+
+ getBiodata = (rollData)=>{
+    console.log("iam called")
+    return new Promise((resolve ,reject)=>{
+        setTimeout((rollData)=>{
+        const biodata = {
+            name:"harsh",
+            age:"21"
+        }
+        resolve(`hi my name is ${biodata.name} iam ${biodata.age} years old 
+        my roll  no .is ${rollData}`)
+    },2000 , rollData)
+    })
+    
+}
+// As we got the result in resolve so now we can use it in (.then) method
+
+//if resolve is not succesfull then we send error msg in reject
+// which is then caught .catch 
+
+pobj1.then((roll)=>{
+    // the parameter roll is same parameter we passed in resolve
+    console.log(roll)
+    getBiodata(roll).then((data)=>{
+        console.log(data);
+    })
+}).catch((err)=>{
+    console.log(err)
+})
