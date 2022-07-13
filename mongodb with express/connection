@@ -1,1 +1,15 @@
 
+We use mongoose to interact with mongodb with express js
+
+
+
+// As usuall we need to require any package in node js
+const mongoose = require("mongoose");
+
+//  this code connects to a remote database and if the data base is not preset then it creates a anew Db then connects with it
+
+mongoose.connect("mongodb://localhost:27017/HarshDb",{useNewUrlParser:true , useUnifiedTopology:true}).then(()=>{
+    console.log("Connection Successfull");
+}).catch((err)=>{
+    console.log(err);
+})
