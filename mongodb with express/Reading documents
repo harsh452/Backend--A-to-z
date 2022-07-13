@@ -5,3 +5,12 @@ const getData = async() =>{
    console.log(data);
 }
 getData()
+
+there are certain comparison operators which we can use to filter out our data more
+
+const getData = async() =>{
+   const data = await Biodata.find({age:{$gt:22}})
+   console.log(data);
+}
+
+// here we will only get data with age value greater than 22;
