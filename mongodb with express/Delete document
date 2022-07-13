@@ -1,0 +1,15 @@
+
+
+const deleteData =async(_id)=>{
+    try{
+        const result =  await Biodata.findByIdAndDelete({_id})
+        console.log(result);
+    }catch(err){
+        console.log(err);
+    }
+}
+getData("Zaid")
+deleteData("62ce8c821fee598a9bead468").then(()=>{
+    getData("Zaid")
+
+})
