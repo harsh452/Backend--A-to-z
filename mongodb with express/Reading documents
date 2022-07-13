@@ -12,5 +12,15 @@ const getData = async() =>{
    const data = await Biodata.find({age:{$gt:22}})
    console.log(data);
 }
-
 // here we will only get data with age value greater than 22;
+
+
+Now there are logical operators like AND, OR NOR, etc
+
+const getData = async(aged) =>{
+   const data = await Biodata.find({$or:[{age:aged},{Address:"Bengal"}]}).select({name:1})
+   console.log(data);
+}
+getData(22)
+
+this is the syntax of or but all the otherr follow same syntax
