@@ -1,0 +1,22 @@
+now to update document 
+
+const getData = async(name) =>{
+   const data = await Biodata.find({name})
+   console.log(data);
+}
+
+const updateData=async(_id) =>{
+    try{
+        const result = await Biodata.findByIdAndUpdate({_id}, {$set :{name :"harsh"}},{new:true , useFindAndModify:false})
+        return result 
+    }catch(err){
+       console.log(err);
+    }
+    
+}
+getData("Harsh mishra")
+updateData("62ce8c821fee598a9bead469").then((data)=>{
+     console.log(data);
+});
+
+we have updated the document and got the new data as the promise
