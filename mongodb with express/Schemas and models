@@ -1,0 +1,24 @@
+ A mongoose schema defines the structure of document ,default values and validators
+ 
+const structure = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    age: Number,
+    Dob: {
+        type: Date,
+        default: Date.now()
+    },
+    Address: String,
+    active: Boolean
+})
+
+A mongoose model is the wrapper on the mongoose schema
+ A mongoose schema defines the structure of document ,default values and validators
+whereas a model provides an interface to the data base for querrying , updating ,deleting records
+in other words it helps us to perform curd operations
+
+// helps to create us colletions 
+const Biodata = new mongoose.model("Biodata",structure)
+Biodata is creted as collection following structure schema we defined
