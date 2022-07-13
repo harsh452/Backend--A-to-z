@@ -12,3 +12,5 @@ Promises have 3 stages
 2->< Resolve == if the promise is fullfield  then this stage occures
 
 3->< reject == if promise is not fullfilled 
+
+Whenever we define a new promise object we need to define a function in it called Executer . IN this function we can write our logic.
