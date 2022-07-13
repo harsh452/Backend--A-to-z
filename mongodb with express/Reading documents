@@ -1,0 +1,7 @@
+now after inserting the documents now we will read the docs
+
+const getData = async() =>{
+   const data = await Biodata.find()
+   console.log(data);
+}
+getData()
