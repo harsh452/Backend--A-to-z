@@ -1,0 +1,4 @@
+We need express.json for POST and PUT requestt which actually recognizez the incoming reqest object as the jason object
+this express.json is middleware
+
+app.use(express.json())
