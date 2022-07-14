@@ -2,3 +2,17 @@ We need express.json for POST and PUT requestt which actually recognizez the inc
 this express.json is middleware
 
 app.use(express.json())
+
+
+now the post method is
+
+
+app.post("/students",async(req,res)=>{
+    try{
+     const stu = new Student(req.body)
+         const result = await stu.save()
+         res.status(201).send(result)
+    }catch(err){
+     res.status(400).send(err)
+    }
+})
