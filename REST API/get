@@ -1,0 +1,22 @@
+
+app.get("/students",async(req,res)=>{
+  try{
+    const result=await Student.find()
+    res.status(201).send(result)
+  }catch(err){
+    res.status(400).send(err)
+  }
+})
+
+app.get("/students/:id",async(req,res)=>{
+  try{
+    
+    const result =await Student.findById({_id:req.params.id})
+    res.status(201).send(result)
+  }catch(err){
+    res.status(400).send(err)
+  }
+})
+
+first method is to get all students 
+2nd 1 is to get the student with id
