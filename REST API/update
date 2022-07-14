@@ -1,0 +1,13 @@
+
+app.patch("/students/:id",async(req,res)=>{
+  try{
+   const result =  await Student.findByIdAndUpdate({_id:req.params.id},req.body,{
+      new:true,
+      FindAndModify:false
+    })
+
+    res.status(201).send(result)
+  }catch(err){
+    res.status(400).send(err)
+  }
+})
