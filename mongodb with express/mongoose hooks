@@ -9,12 +9,15 @@ userSchema.post('save',(doc,next)=>{
 
 this method is triggered when a data is saved in the database
 
-userSchema.pre('save',function(next){
-    console.log('new user is about to be  created',this);
+userSchema.pre('save',async function(next){
+    console.log('new user is about to be created',this);
+    const salt = await bcrypt.genSalt()
+    this.password = await bcrypt.hash(this.password, salt)
     next()
 })
 userSchema.pre method is triggered when a data is about to be saved in the database
 we cannot use arrow function in  before save method because we need "this" keyword which will be used as instance of user data which is about to be saved in db
 
+in pre hook we have just hashed password before saving it to db
 
 we need to use next() because it is a mongoose hook method therefore we need to use next() so that it can carry on to the next operations
