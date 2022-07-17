@@ -1,3 +1,5 @@
+This hooks can be written where we have defined our schema
+
 we can fire any function after or before certain task has been completed in db
 
 userSchema.post('save',(doc,next)=>{
